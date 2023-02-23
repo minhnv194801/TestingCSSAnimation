@@ -343,6 +343,7 @@ transform: translate(-50%, -50%) rotate(-37deg) !important;
     width: 100vw;
     display: grid;
     place-content: center;
+    position: relative;
 }
 
 .black-lives-matter {
@@ -366,22 +367,25 @@ body{
   p{
     color:black;
     
-    width:420px;
-    height:250px;
+    width:80vw;
+    height:60vh;
     
     font-family: 'Oswald', sans-serif;
     font-size:9em;
     line-height:1;
-    margin:0;
+    /* margin:0; */
     padding:0;
     
     -webkit-transform: rotateX(25deg) rotateY(20deg) rotateZ(-3deg); 
     transform: rotateX(25deg) rotateY(20deg) rotateZ(-3deg);  
     
     position:absolute;
-    left:50%;
-    top:50px;
-    margin-left:-180px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-left: 30vw;
     
     -webkit-animation: anim 0.5s;
     -webkit-animation-timing-function: linear;
