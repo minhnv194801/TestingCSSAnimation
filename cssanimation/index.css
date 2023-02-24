@@ -696,12 +696,13 @@ body{
   } 
   
   .stone {
-    z-index: 10000;
+    z-index: 10001;
     position: absolute;
+    border-radius: 50%;
     top: 0;
     bottom: 0;
     margin: auto;
-    animation: stone-move 86400s forwards;
+    animation: stone-move 3600s forwards;
   }
 
   .challenger {
@@ -713,16 +714,16 @@ body{
     right: 0;
     height: 160px;
     width: 320px;
-    animation: challenger-move 1s 86000s forwards;
+    animation: challenger-move 1s 3200s forwards;
     animation: name duration timing-function delay iteration-count direction fill-mode;
   }
 
   @keyframes stone-move {
     0% {
-        transform: translateX(0%);
+        transform: translateX(0%) rotate(0deg);
     }
     100% {
-        transform: translateX(100vw);
+        transform: translateX(95vw) rotate(360000deg);
     }
   }
 
