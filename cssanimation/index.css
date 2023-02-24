@@ -349,7 +349,7 @@ transform: translate(-50%, -50%) rotate(-37deg) !important;
 }
 
 .sudden {
-    animation: suddenwhite 10s infinite forwards;
+    animation: suddenwhite 8s infinite forwards;
     height: 100vh;
     width: 100vw;
     position: absolute;
@@ -441,11 +441,11 @@ body{
     }
     85% {
         z-index: 100000;
-        background-color: #fff;
+        background-image: url("shithead.png");
     }
     100% {
         z-index: 100000;
-        background-color: #fff;
+        background-image: url("shithead.png");
     }
 }
 
@@ -561,6 +561,10 @@ body{
 
 .image {
     height: 100%; width: 100%; object-fit: contain
+}
+
+.shithead {
+    height: 100%; width: 100%; object-fit: stretch
 }
 
 @keyframes spin-left-right {
