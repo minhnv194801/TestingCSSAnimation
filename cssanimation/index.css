@@ -348,6 +348,15 @@ transform: translate(-50%, -50%) rotate(-37deg) !important;
     position: relative;
 }
 
+.sudden {
+    animation: suddenwhite 10s infinite forwards;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .black-lives-matter {
     position: absolute;
     top: 0;
@@ -357,7 +366,7 @@ transform: translate(-50%, -50%) rotate(-37deg) !important;
     margin: auto;
     max-height: 100%;
     max-width: 978px;
-    animation: black-dance 1s infinite;
+    animation: black-dance 5s infinite;
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
@@ -370,7 +379,14 @@ transform: translate(-50%, -50%) rotate(-37deg) !important;
     left: 0;
     height: 30%;
     margin: auto;
-    animation: spin-left-right 2s ease-in-out infinite
+    animation: spin-left-right 1s ease-in-out infinite
+}
+.audio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
 }
 
 .pop-right {
@@ -382,7 +398,15 @@ transform: translate(-50%, -50%) rotate(-37deg) !important;
     right: 0;
     height: 30%;
     margin: auto;
-    animation: spin-right-left 2s ease-in-out infinite
+    animation: spin-right-left 1s ease-in-out infinite
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
 }
 
 body{  
@@ -394,6 +418,7 @@ body{
   }
 
   h1 {
+    z-index: 100;
     font-family: 'Oswald', sans-serif;
     font-size:9em;
     line-height:1;
@@ -402,7 +427,95 @@ body{
     bottom: 0;
     right: 20vw;
     opacity: 0;
-    animation: fade 1s linear 2s forwards, turnred 1s linear 5s forwards;
+    animation: fade 5s linear 2s infinite, turnred 3s linear 2s infinite;
+}
+
+@keyframes suddenwhite {
+    0% {
+        background: black;
+        z-index: 0;
+    }
+    80% {
+        background: black;
+        z-index: 0;
+    }
+    85% {
+        z-index: 100000;
+        background-color: #fff;
+    }
+    100% {
+        z-index: 100000;
+        background-color: #fff;
+    }
+}
+
+.rollaround {
+    z-index: 50;
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    animation: rolling-around 100s linear infinite
+}
+
+@keyframes rolling-around {
+    0% {
+        transform: translateX(-10vw) rotate(0deg);
+    }
+    5% {
+        transform: translateX(-10vw) translateY(35%) rotate(600deg);
+    }
+    10% {
+        transform: translateX(-10vw) rotate(0deg);
+    }
+    15% {
+        transform: translateX(-10vw) translateY(35%) rotate(3300deg);
+    }
+    19% {
+        transform: translateX(-10vw) rotate(0deg);
+    }
+    20% {
+        transform: translateX(-10vw) translateY(35%) rotate(600deg);
+    }
+    30% {
+        transform: translateX(30vw) translateY(35%) rotate(900deg);
+    }
+    40% {
+        transform: translateX(60vw) translateY(35%) rotate(1200deg);
+    }
+    50% {
+        transform: translateX(60vw) translateY(0%) rotate(1500deg);
+    }
+    51% {
+        transform: translateX(-10vw) rotate(0deg);
+    }
+    60% {
+        transform: translateX(60vw) translateY(-35%) rotate(1762deg);
+    }
+    65% {
+        transform: translateX(60vw) translateY(0%) rotate(1500deg);
+    }
+    70% {
+        opacity: 0;
+        transform: translateX(30vw) translateY(-35%) rotate(2100deg);
+    }
+    75% {
+        opacity: 0;
+        transform: translateX(-20vw) translateY(35%) rotate(2100deg);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(30vw) translateY(-35%) rotate(2400deg);
+    }
+    90% {
+        transform: translateX(-10vw) translateY(35%) rotate(3000deg);
+    }
+    100% {
+        transform: translateX(0vw) rotate(3600deg);
+    }
 }
 
 @keyframes turnred {
@@ -453,24 +566,56 @@ body{
 @keyframes spin-left-right {
     0%{
         transform: translateX(0px) rotate(0deg);
+        visibility: visible;
+        opacity: 1;        
+    }
+    37.5% {
+        transform: translateX(71.25vw) rotate(18000000deg);
+        visibility: hidden;
+        opacity: 0;        
     }
     50% {
         transform: translateX(95vw) rotate(36000000deg);
+        visibility: visible;
+        opacity: 1;        
+    }
+    87.5% {
+        transform: translateX(23.75vw) rotate(54000000deg);
+        visibility: hidden;        
+        opacity: 0;        
     }
     100%{
         transform: translate(0px) rotate(72000000deg);
+        visibility: visible;
+        opacity: 1;        
     }
 }
 
 @keyframes spin-right-left {
     0%{
         transform: translateX(0) rotate(0deg);
+        visibility: visible;
+        opacity: 1;        
+    }
+    37.5% {
+        transform: translateX(-71.25vw) rotate(18000000deg);
+        visibility: hidden;
+        opacity: 0;        
     }
     50% {
         transform: translateX(-95vw) rotate(36000000deg);
+        visibility: visible;
+        opacity: 1;        
+    }
+    87.5% {
+        transform: translateX(-23.75vw) rotate(54000000deg);
+        visibility: hidden;
+        opacity: 0;        
     }
     100%{
         transform: translateX(0) rotate(72000000deg);
+        visibility: visible;
+        opacity: 1;        
     }
 }
 
@@ -550,3 +695,52 @@ body{
       100% {text-shadow:-9px 4px 0px teal;}
   } 
   
+  .stone {
+    z-index: 10000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    animation: stone-move 86400s forwards;
+  }
+
+  .challenger {
+    z-index: 10000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0;
+    height: 160px;
+    width: 320px;
+    animation: challenger-move 1s 86000s forwards;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+  }
+
+  @keyframes stone-move {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+  }
+
+  @keyframes challenger-move {
+    0% {
+        right:0
+    }
+    90% {
+        right: 0;
+        margin: 0;
+    }
+    95% {
+        left: 0;
+        margin: 0;
+    }
+    100% {
+        left:0;
+        right: auto;
+        margin: auto;
+    }
+  }
